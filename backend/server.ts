@@ -20,6 +20,18 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname + '/../frontend/html/index.html'));
 });
 
+app.get("/admin", (req, res) => {
+    res.sendFile(path.join(__dirname + '/../frontend/html/admin.html'));
+});
+
+app.get("/messeliste", (req, res) => {
+    res.sendFile(path.join(__dirname + '/../frontend/html/messeliste.html'));
+});
+
+app.get("/messe", (req, res) => {
+    res.sendFile(path.join(__dirname + '/../frontend/html/messe.html'));
+});
+
 //serverlistening
 app.listen(8080, () => {
     console.log("Server listening on Port 8080")
