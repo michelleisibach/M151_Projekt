@@ -7,28 +7,28 @@ const app = express();
 var pgp = require("pg-promise")(/*options*/);
 var db = pgp("postgres://root:mypassword@localhost:5432/churchappdb")
 app.use(bodyParser.json());
+
+
 //generate Session
 app.use(expressSession({
-    secret: "cookie",
+    secret: "onlinechurchsession",
     resave: false,
     saveUnitialized: true
 }));
+
+
 //use default assets like stylesheet etc...
 app.use("/assets", express.static(path.join(__dirname, "/../frontend/assets")));
 app.use(express.json());
 
-//frontend
+//frontend --> send html files for navigation/links
 app.get("/", (req, res) => {
-   
- /*   db.one("SELECT $1 AS value", 123)
-                .then(function (data) {
-                        console.log("DATA:", data.value);
-    })
-    .catch(function (error) {
-        console.log("ERROR:", error);
-    });*/
-
     res.sendFile(path.join(__dirname + '/../frontend/html/index.html'));
+
+    db.any('SELECT * FROM priests')
+        .then(function(data){
+            console.log("DATA:", data.value);
+        });
 });
 
 app.get("/admin", (req, res) => {
@@ -54,6 +54,16 @@ app.get("/contact", (req, res) => {
 app.get("/aboutus", (req, res) => {
     res.sendFile(path.join(__dirname+ '/../frontend/html/aboutus.html'));
 });
+
+//api to get data from servers.
+
+app.get("api/exhibitions/get", (req, res) => {
+    //code von der DB und einem json
+    db.any('SELECT * FROM priests')
+        .then(function(data){
+            console.log("DATA:", data.value);
+        });
+})
 
 
 //serverlistening
