@@ -1,16 +1,13 @@
-version: '3'
+version: '3.1'
 
 services:
 
-  mysql-development:
-    image: mysql:8.0.17
+  db:
+    image: postgres
     environment:
-      MYSQL_ROOT_PASSWORD: helloworld
-      MYSQL_DATABASE: testapp
+      POSTGRES_USER: michel
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: churchappdb
     ports:
-      - "3308:3306"
-  
-  admin:    
-    image: adminer    
-    ports:      
-      - "5432:5432"
+      - 5432:5432
+    restart: always
