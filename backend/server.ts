@@ -5,7 +5,7 @@ import * as expressSession from "express-session";
 
 const app = express();
 var pgp = require("pg-promise")(/*options*/);
-var db = pgp("postgres://root:mypassword@localhost:5432/churchappdb")
+var db = pgp("postgres://michel:mypassword@localhost:5432/churchappdb")
 app.use(bodyParser.json());
 
 //generate Session
@@ -23,10 +23,15 @@ app.use(express.json());
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname + '/../frontend/html/index.html'));
 
+    db.any('SELECT * FROM exhibitions')
+    .then(function(data){
+        console.log("DATA:", data);
+    });
+
     db.any('SELECT * FROM priests')
-        .then(function(data){
-            console.log("DATA:", data.value);
-        });
+    .then(function(data){
+        console.log("DATA:", data);
+    });
 });
 
 app.get("/admin", (req, res) => {
@@ -77,7 +82,7 @@ app.get("api/exhibitions/get/:id", (req, res) => {
 app.get("api/priests/get", (req, res) => {
     db.any('SELECT * FROM priests')
         .then(function(data){
-            console.log("DATA:", data.value);
+            console.log("DATA:", data);
         });
 });
 
