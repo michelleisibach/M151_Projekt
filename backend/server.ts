@@ -73,7 +73,7 @@ app.get("/api/exhibitions/get", (req, res) => {
         });
 });
 
-app.get("api/exhibitions/get/:id", (req, res) => {
+app.get("/api/exhibitions/get/:id", (req, res) => {
     //get specific exhibition --> correct
     db.any('Select * FROM exhibitions WHERE "ID"')
         .then(function(data){
@@ -82,14 +82,15 @@ app.get("api/exhibitions/get/:id", (req, res) => {
         });
 }); 
 
-app.get("api/priests/get", (req, res) => {
+app.get("/api/priests/get", (req, res) => {
     db.any('SELECT * FROM priests')
         .then(function(data){
-            console.log("DATA:", data);
+            const myObjStr = JSON.stringify(data);
+            res.json(myObjStr);
         });
 });
 
-app.post("api/exhibition/:id", (req, res) => {
+app.post("/api/exhibition/:id", (req, res) => {
     //create new exhibition --> send the parameters in the header and cut it open here and insert it into the DB
 });
 
