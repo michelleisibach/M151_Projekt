@@ -43,8 +43,8 @@ app.get("/messeliste", (req, res) => {
 });
 
 //get exhibitions with the id
-app.get("/messe/:id", (req, res) => {
-    res.sendFile(path.join(__dirname + '/../frontend/html/messe.html'));
+app.get("/login", (req, res) => {
+    res.sendFile(path.join(__dirname + '/../frontend/html/login.html'));
 });
 
 app.get("/priests", (req, res) => {
