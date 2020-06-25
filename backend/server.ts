@@ -62,11 +62,14 @@ app.get("/aboutus", (req, res) => {
 
 //api to get data from servers.
 
-app.get("api/exhibitions/get", (req, res) => {
+app.get("/api/exhibitions/get", (req, res) => {
     //code von der DB und einem json --> correct 
     db.any('SELECT * FROM exhibitions')
         .then(function(data){
+            const myObjStr = JSON.stringify(data);
             console.log("DATA:", data.value);
+            console.log("DATA JSON:", JSON.parse(myObjStr));
+            res.json(myObjStr);
         });
 });
 
