@@ -14,10 +14,10 @@ function getEx() {
                 tbody.innerHTML +=
                     `
                        <div height: 200px;>  
-                           <p> Name: ${obj.firstname} <br>
-                            Code: ${obj.lastname} <br>
-                           Time: ${obj.status} <br>
-                          Date: ${obj.age}  </p>
+                           <p> Firstname: ${obj.firstname} <br>
+                            Lastname: ${obj.lastname} <br>
+                           Status: ${obj.status} <br>
+                          Age: ${obj.age}  </p>
                        </div>`;
 
             }
