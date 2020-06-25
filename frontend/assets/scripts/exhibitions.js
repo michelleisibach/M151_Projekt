@@ -7,9 +7,7 @@ function getEx() {
     fetch("/api/exhibitions/get")
         .then(r => r.json())
         .then(r => {
-            console.log(r);
             const parseData = JSON.parse(r);
-            console.log(parseData);
 
             for (var i = 0; i < parseData.length; i++) {
                 var obj = parseData[i];
@@ -23,6 +21,33 @@ function getEx() {
                    Date: ${obj.date}  </p>
                 </div>`;
 
+            }
+        });
+}
+
+function joinMeeting() {
+    var code = document.getElementById("meetingcode").value;
+    console.log(code);
+    console.log("Meeting joined");
+
+    //check if the meeting code is valid
+    fetch("/api/exhibitions/get")
+        .then(r => r.json())
+        .then(r => {
+            const parseData = JSON.parse(r);
+
+            for (var i = 0; i < parseData.length; i++) {
+                var obj = parseData[i];
+
+                if (obj.code == code) {
+                    console.log("works");
+                    window.open('https://www.youtube.com/watch?v=V5ycXf0x7Rs', '_blank');
+                    document.getElementById("meetingcode").value = "";
+
+                } else {
+                    console.log("false");
+                    document.getElementById("meetingcode").value = "";
+                }
             }
         });
 }
