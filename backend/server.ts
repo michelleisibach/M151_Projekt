@@ -90,7 +90,7 @@ app.get("/api/priests/get", (req, res) => {
         });
 });
 
-app.post("/api/exhibition/", (req, res) => {
+app.post("/api/priest/", (req, res) => {
     var firstname = req.body.firstname;
     var lastname = req.body.lastname;
     var age = req.body.age;
@@ -109,7 +109,7 @@ app.post("/api/exhibition/", (req, res) => {
 
     console.log(firstname);
 
-    if(firstname != null && lastname != null && age != null && status != null && mail != null && password != null){
+    if(firstname != "" && lastname != "" && age != "" && status != "" && mail != "" && password != ""){
             db.query(
                 'INSERT INTO priests(firstname, lastname, age, status, mail, pw) VALUES ('+firstname+', '+lastname+', '+age+', '+status+', '+mail+', '+password+');',
                 (err, res) => {
@@ -119,6 +119,31 @@ app.post("/api/exhibition/", (req, res) => {
               );            
     }
 });
+
+app.post("/api/exhibition/", (req, res) =>{
+    var eventname = req.body.eventname;
+    var code = req.body.code;
+    var time = req.body.date;
+    var date = req.body.date;
+    var pw = req.body.pw;
+    res.end("yes");
+
+    eventname = "'" +eventname+"'";
+    code = "'" +code+"'";
+    time = "'" +pw+"'";
+    date = "'" +date+"'";
+    pw = "'" +pw+"'";
+
+    if(eventname != "" && code != "" && time != "" && date != ""){
+            db.query(
+                'INSERT INTO exhibitions(name, code, time, date, pw) VALUES  ('+eventname+', '+code+', '+time+', '+date+', '+pw+');',
+                (err, res) => {
+                  console.log(err, res);
+                  db.end();
+                }
+              );            
+    }
+})
 
 //serverlistening
 app.listen(5000, () => {
