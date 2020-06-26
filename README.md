@@ -64,3 +64,31 @@ Dort geben Sie folgenden Code Snippet ein:
 | password:  mypassword       
 | port:      5432      
 | db:        churchappdb 
+
+ danach wählen Sie die Datenbank churchappdb aus und führen folgendes Skript aus:
+
+```
+DROP TABLE exhibitions;
+DROP TABLE priests;
+```
+
+Als erstes wird sichergegangen, dass alle Tabellen gelöscht sind.
+
+Anschliessend können Sie die Tabellen mit den gewünschten werden neu erstellen:
+```
+
+        CREATE TABLE priests (
+             ID  SERIAL PRIMARY KEY,
+            firstname       varchar(40) NOT NULL,
+             lastname        varchar(40) NOT NULL,
+             age                         int,
+             status              varchar(40),
+             mail                varchar(80),
+             pw          varchar(40)
+         );
+
+          INSERT INTO priests(firstname, lastname, age, status, mail, pw) VALUES
+                               ('Jesus', 'Christus', 2020, 'god', 'jesus.christ@gmail.com', 'god1234'),
+                               ('Angela', 'Merkel', 67, 'priest', 'angela.merkel@de.de', 'pw1234'),
+                               ('Simon', 'Mueri', 18, 'hostage', 'simon.mueri@mail.co', 'pw5678');
+```
