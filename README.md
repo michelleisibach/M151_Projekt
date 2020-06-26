@@ -77,7 +77,7 @@ Als erstes wird sichergegangen, dass alle Tabellen gelöscht sind.
 Anschliessend können Sie die Tabellen mit den gewünschten werden neu erstellen:
 ```
     DROP TABLE priests;
-    
+
         CREATE TABLE priests (
              ID  SERIAL PRIMARY KEY,
              firstname       varchar(40) NOT NULL,
@@ -109,3 +109,14 @@ Anschliessend können Sie die Tabellen mit den gewünschten werden neu erstellen
                          ('Gottesdienst', 'DAB123', '11:00', '01.04', ''),
                          ('Taufe', 'SK489A', '13:00', '03.05', 'password');
 ```
+
+## Login mit Standart Usern
+
+Wenn Sie eine neue Messe oder einen neuen User erfassen möchten, müssen Sie unter Priests auf den Link ganz unten "Login for priests" klicken. Nun können Sie sich mit einem der Standart usern einloggen:
+
+jesus.christ@gmail.com | god1234
+angela.merkel@de.de    | pw1234
+simon.mueri@mail.co    | pw5678
+
+Sobald Sie sich eingloggt haben, kommen Sie auf eine neue Website wo Sie zwei "Forms" haben. Einerseits können Sie einen User/Priest oder eine Messe erfassen. Sobald Sie eine Messe oder User erfasst haben, erscheint der in der jeweiligen Seite. 
+Mit dem User, welchen Sie erstellt haben, können Sie sich mit seiner E-Mail sowie dem Passwort einloggen. 
