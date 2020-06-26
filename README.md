@@ -126,3 +126,7 @@ Mit dem User, welchen Sie erstellt haben, können Sie sich mit seiner E-Mail sow
 ## Server beenden
 
 Um die Server zu beenden müssen Sie im jeweiligen CMD **Ctrl + C** eingeben. Anschliessend wird der jeweilige Server gestoppt.
+
+## Powerpoint
+
+Die Powerpoint bzw das PDF der Powerpoint finden Sie im ordner **data**.
