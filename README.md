@@ -47,3 +47,20 @@ Dort geben Sie folgenden Code Snippet ein:
   docker-compose -f docker-compose.yml up
   ```
   ein und drücken Sie enter.
+
+
+  ## Datenbank und Webserver testen.
+
+  Nun sollten Sie localhost:5000 aufrufen und nach Exhibitions oder Priests gehen. Wenn Sie dort Einträge finden wie zum Beispiel Gottesdienst oder Taufe sowie Priester welche aufgelistet wurden, konnten alle Daten geladen werden. Fals nicht müssen Sie folgende Schritte durchführen: 
+
+  ### PGAdmin 4 herunterladen
+  
+  Da die Daten welche wir noch nicht benötigen noch nicht in der Datenbank sind, müssen wir diese noch einfügen. Installieren Sie sich deshalb [pgAdmin 4](https://www.pgadmin.org/download/pgadmin-4-windows/) und führen diesen aus.
+
+  Anschliessend müssen Sie auf die Datenbank verbinden. Die Credentials sind folgende: 
+  
+| ------------- |:-------------:| 
+| username    | michel | 
+| password      | mypassword      | 
+| port | 5432      |
+| db | churchappdb |
