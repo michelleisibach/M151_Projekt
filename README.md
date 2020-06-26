@@ -59,8 +59,8 @@ Dort geben Sie folgenden Code Snippet ein:
 
   Anschliessend müssen Sie auf die Datenbank verbinden. Die Credentials sind folgende: 
   
-| ------------- |:-------------:| 
-| username    | michel | 
-| password      | mypassword      | 
-| port | 5432      |
-| db | churchappdb |
+
+| username:  michel  
+| password:  mypassword       
+| port:      5432      
+| db:        churchappdb 
