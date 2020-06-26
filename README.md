@@ -37,7 +37,7 @@ Dort geben Sie folgenden Code Snippet ein:
   ```
   um den Webserver zu starten.
   
-  8. Sobald der Webserver gestartet ist, können Sie im Browser unter localhost:5000 den Webshop aufrufen.
+  8. Sobald der Webserver gestartet ist, können Sie im Browser unter localhost:5000 die Website aufrufen.
 
   ### Datenbank
 
