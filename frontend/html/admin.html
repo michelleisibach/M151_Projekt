@@ -7,6 +7,9 @@
     <!--    <meta name="description" content="Beispiel-Design Nr. 03 von SelfHTML.org" /> -->
     <link rel="stylesheet" href="assets/adminstyle.css">
     <script rel="javascript" src="assets/scripts/admin.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+    </script>
+
 
     <title>onlinechurchhd</title>
 </head>
@@ -36,6 +39,31 @@
             <h3>Welcome to the admin area of onlinechurchhd</h3>
             <div id="loginform">
                 <h4>Create new user:</h4>
+                <script>
+                    $(document).ready(function() {
+                        var firstname, lastname, age, status, mail, password;
+                        $("#submit").click(function() {
+                            firstname = $("#firstname").val();
+                            lastname = $("#lastname").val();
+                            age = $("#age").val();
+                            status = $("#status").val();
+                            mail = $("#mail").val();
+                            password = $("#password").val();
+                            $.post("/api/exhibition/", {
+                                firstname: firstname,
+                                lastname: lastname,
+                                age: age,
+                                status: status,
+                                mail: mail,
+                                password: password
+                            }, function(data) {
+                                if (data === 'yes') {
+                                    alert("login success");
+                                }
+                            });
+                        });
+                    });
+                </script>
                 <br> Firstname (required):
                 <input type="text" name="firstname" id="firstname" placeholder="Example" required>
                 <br>
@@ -55,7 +83,7 @@
                 <input type="text" name="password" id="password" placeholder="examplepassword" required>
                 <br>
                 <br>
-                <button>Create new User</button>
+                <input type="button" id="submit" value="Submit">
                 <hr />
                 <h4>Create new Event:</h4>
                 <br> Name (required):
@@ -71,7 +99,7 @@
                 <input type="text" name="mail" id="date" placeholder="12.01.2020" required>
                 <br>
                 <br>Password (required):
-                <input type="text" name="mail" id="password" placeholder="Examplepassword" required>
+                <input type="text" name="mail" id="pw" placeholder="Examplepassword" required>
                 <br>
                 <br>
                 <button>Create new Event</button>

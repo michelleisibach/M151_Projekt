@@ -7,7 +7,7 @@ const app = express();
 var pgp = require("pg-promise")(/*options*/);
 var db = pgp("postgres://michel:mypassword@localhost:5432/churchappdb")
 app.use(bodyParser.json());
-
+app.use(bodyParser.urlencoded({ extended: false }));
 //generate Session
 app.use(expressSession({
     secret: "onlinechurchsession",
@@ -90,8 +90,15 @@ app.get("/api/priests/get", (req, res) => {
         });
 });
 
-app.post("/api/exhibition/:id", (req, res) => {
-    //create new exhibition --> send the parameters in the header and cut it open here and insert it into the DB
+app.post("/api/exhibition/", (req, res) => {
+    var firstname = req.body.firstname;
+    var lastname = req.body.lastname;
+    var age = req.body.age;
+    var status = req.body.status;
+    var mail = req.body.mail;
+    var password = req.body.password;
+    console.log(firstname, lastname, age, status, mail, password);
+    res.end("yes");
 });
 
 //serverlistening
