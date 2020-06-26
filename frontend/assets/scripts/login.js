@@ -17,7 +17,13 @@ function login() {
 
             for (var i = 0; i < parseData.length; i++) {
                 var obj = parseData[i];
-                console.log(obj);
+                if (obj.mail == mail) {
+                    console.log("mail correct");
+                    if (obj.pw == password) {
+                        console.log("password correct");
+                        window.open("/admin", "_blank");
+                    }
+                }
             }
         });
     console.log("done");
