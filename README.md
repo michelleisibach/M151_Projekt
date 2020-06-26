@@ -76,38 +76,38 @@ Als erstes wird sichergegangen, dass alle Tabellen gelöscht sind.
 
 Anschliessend können Sie die Tabellen mit den gewünschten werden neu erstellen:
 ```
-    DROP TABLE priests;
+DROP TABLE priests;
 
-        CREATE TABLE priests (
-             ID  SERIAL PRIMARY KEY,
-             firstname       varchar(40) NOT NULL,
-             lastname        varchar(40) NOT NULL,
-             age                         int,
-            status              varchar(40),
-             mail                varchar(80),
-             pw          varchar(40)
-        );
+    CREATE TABLE priests (
+         ID  SERIAL PRIMARY KEY,
+         firstname       varchar(40) NOT NULL,
+         lastname        varchar(40) NOT NULL,
+         age                         int,
+         status              varchar(40),
+         mail                varchar(80),
+         pw          varchar(40)
+    );
 
-         INSERT INTO priests(firstname, lastname, age, status, mail, pw) VALUES
-                               ('Jesus', 'Christus', 2020, 'god', 'jesus.christ@gmail.com', 'god1234'),
-                                ('Angela', 'Merkel', 67, 'priest', 'angela.merkel@de.de', 'pw1234'),
-                                 ('Simon', 'Mueri', 18, 'hostage', 'simon.mueri@mail.co', 'pw5678');
+    INSERT INTO priests(firstname, lastname, age, status, mail, pw) VALUES
+        ('Jesus', 'Christus', 2020, 'god', 'jesus.christ@gmail.com', 'god1234'),
+        ('Angela', 'Merkel', 67, 'priest', 'angela.merkel@de.de', 'pw1234'),
+        ('Simon', 'Mueri', 18, 'hostage', 'simon.mueri@mail.co', 'pw5678');
 
 
-        DROP TABLE exhibitions;
+    DROP TABLE exhibitions;
 
-         CREATE TABLE exhibitions (
-                ID              SERIAL PRIMARY KEY,
-                 name    varchar(40) NOT NULL,
-                 code    varchar(40) NOT NULL,
-                 time    varchar(10) NOT NULL,
-                date    varchar(10) NOT NULL,
-                 pw              varchar(40)
-         );
+    CREATE TABLE exhibitions (
+        ID              SERIAL PRIMARY KEY,
+        name    varchar(40) NOT NULL,
+        code    varchar(40) NOT NULL,
+        time    varchar(10) NOT NULL,
+        date    varchar(10) NOT NULL,
+        pw              varchar(40)
+    );
  
-        INSERT INTO exhibitions(name, code, time, date, password) VALUES
-                         ('Gottesdienst', 'DAB123', '11:00', '01.04', ''),
-                         ('Taufe', 'SK489A', '13:00', '03.05', 'password');
+    INSERT INTO exhibitions(name, code, time, date, password) VALUES
+                ('Gottesdienst', 'DAB123', '11:00', '01.04', ''),
+                ('Taufe', 'SK489A', '13:00', '03.05', 'password');
 ```
 
 ## Login mit Standart Usern

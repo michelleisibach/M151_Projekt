@@ -12,15 +12,18 @@ function getEx() {
             for (var i = 0; i < parseData.length; i++) {
                 var obj = parseData[i];
 
-                tbody.innerHTML +=
-                    `
+                if (obj.name != "" && obj.code != "" && obj.time != "" && obj.date != "") {
+
+
+                    tbody.innerHTML +=
+                        `
                 <div height: 200px;>  
                     <p> Name: ${obj.name} <br>
                      Code: ${obj.code} <br>
                     Time: ${obj.time} <br>
                    Date: ${obj.date}  </p>
                 </div>`;
-
+                }
             }
         });
 }
