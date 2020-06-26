@@ -114,11 +114,15 @@ Anschliessend können Sie die Tabellen mit den gewünschten werden neu erstellen
 
 Wenn Sie eine neue Messe oder einen neuen User erfassen möchten, müssen Sie unter Priests auf den Link ganz unten "Login for priests" klicken. Nun können Sie sich mit einem der Standart usern einloggen:
 
-"jesus.christ@gmail.com | god1234"
+jesus.christ@gmail.com | god1234
 
-"angela.merkel@de.de    | pw1234"
+angela.merkel@de.de    | pw1234
 
-"simon.mueri@mail.co    | pw5678"
+simon.mueri@mail.co    | pw5678
 
 Sobald Sie sich eingloggt haben, kommen Sie auf eine neue Website wo Sie zwei "Forms" haben. Einerseits können Sie einen User/Priest oder eine Messe erfassen. Sobald Sie eine Messe oder User erfasst haben, erscheint der in der jeweiligen Seite. 
 Mit dem User, welchen Sie erstellt haben, können Sie sich mit seiner E-Mail sowie dem Passwort einloggen. 
+
+## Server beenden
+
+Um die Server zu beenden müssen Sie im jeweiligen CMD **Ctrl + C** eingeben. Anschliessend wird der jeweilige Server gestoppt.
