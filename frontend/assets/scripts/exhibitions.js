@@ -27,8 +27,6 @@ function getEx() {
 
 function joinMeeting() {
     var code = document.getElementById("meetingcode").value;
-    console.log(code);
-    console.log("Meeting joined");
 
     //check if the meeting code is valid
     fetch("/api/exhibitions/get")
@@ -40,12 +38,10 @@ function joinMeeting() {
                 var obj = parseData[i];
 
                 if (obj.code == code) {
-                    console.log("works");
                     window.open('https://www.youtube.com/watch?v=V5ycXf0x7Rs', '_blank');
                     document.getElementById("meetingcode").value = "";
 
                 } else {
-                    console.log("false");
                     document.getElementById("meetingcode").value = "";
                 }
             }
