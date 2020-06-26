@@ -99,6 +99,25 @@ app.post("/api/exhibition/", (req, res) => {
     var password = req.body.password;
     console.log(firstname, lastname, age, status, mail, password);
     res.end("yes");
+
+    firstname = "'" +firstname+"'";
+    lastname = "'" +lastname+"'";
+    age = parseInt(age);
+    status = "'" +status+"'";
+    mail = "'" +mail+"'";
+    password = "'" +password+"'";
+
+    console.log(firstname);
+
+    if(firstname != null && lastname != null && age != null && status != null && mail != null && password != null){
+            db.query(
+                'INSERT INTO priests(firstname, lastname, age, status, mail, pw) VALUES ('+firstname+', '+lastname+', '+age+', '+status+', '+mail+', '+password+');',
+                (err, res) => {
+                  console.log(err, res);
+                  db.end();
+                }
+              );            
+    }
 });
 
 //serverlistening
